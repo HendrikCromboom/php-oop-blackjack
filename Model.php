@@ -1,11 +1,5 @@
 <?php
-include 'ClassLibrary/Card.php';
-include 'ClassLibrary/Deck.php';
-include 'ClassLibrary/Suit.php';
-include 'ClassLibrary/Game.php';
-include 'ClassLibrary/Player.php';
-include 'ClassLibrary/Opponent.php';
-include 'ClassLibrary/GameState.php';
+include 'ClassLibrary/autoloader.php';
 
 //Start of Game Flow
 if(!isset($_SESSION["gameState"])){
