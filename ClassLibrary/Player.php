@@ -5,6 +5,16 @@ declare(strict_types=1);
 Class Player{
     private bool $active;
     private array $hand;
+    private int $total;
+    private string $choice;
+
+    public function __construct()
+    {
+        $this->active = true;
+        $this->hand = [];
+        $this->total = 0;
+        $this->choice = 'non';
+    }
 
     public function isActive(): bool
     {
@@ -29,5 +39,24 @@ Class Player{
     public function countHand(): int
     {
         return count($this->hand);
+    }
+
+    public function getTotal(): int
+    {
+        $total = 0;
+        foreach ($this->hand AS $card){
+            $total +=$card ->getValue();
+        }
+        return $total;
+    }
+    public function setChoice($choice){
+        $this->choice = $choice;
+    }
+
+    public function getChoice(){
+        return $this->choice;
+    }
+    function dump(){
+        var_dump(get_object_vars($this));
     }
 }
